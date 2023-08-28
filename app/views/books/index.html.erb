@@ -1,10 +1,18 @@
 <div>
   <h2>User info</h2>
-  <%= image_tag @user.get_profile_image(100,100) %>
+  <% if @user.image.attached? %>
+    <%= image_tag @user.image, size: "100x100" %>
+  <% else %>
+    <%= image_tag 'no_image.jpg', size: "100x100" %>
+  <% end %>
   <p>name</p>
   <p><%= @user.name %></p>
   <p>introduction</p>
   <p><%= @user.introduction %></p>
+</div>
+
+<div>
+  <%= link_to "Edit", edit_user_path(@user) %>
 </div>
 
 <h2>New book</h2>
@@ -17,3 +25,8 @@
 
   <%= f.submit 'Create Book' %>
 <% end %>
+
+<h2>Books</h2>
+<% @books.each do |book| %>
+  <%= image_tag book.
+  <p>Title</p>
