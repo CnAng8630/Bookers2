@@ -28,7 +28,7 @@
             <% if user_signed_in? %>
               <li class="nav-item">
                 <%= link_to user_path(current_user.id), class: 'nav-link text-white' do %>
-                  <i class="fa-solid fa-house"></i>
+                  <i class="fas fa-home"></i>
                   Home
                 <% end %>
               </li>
@@ -46,14 +46,14 @@
               </li>
               <li class="nav-item">
                 <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-white' do %>
-                  <i class="fa-solid fa-right-from-bracket"></i>
+                  <i class="fas fa-sign-out-alt"></i>
                   Log out
                 <% end %>
               </li>
             <% else %>
               <li class="nav-item">
                 <%= link_to root_path, class: 'nav-link text-white' do %>
-                  <i class="fa-solid fa-house"></i>
+                  <i class="fas fa-home"></i>
                   Home
                 <% end %>
               </li>
@@ -71,7 +71,7 @@
               </li>
               <li class="nav-item">
                 <%= link_to new_user_session_path, class: 'nav-link text-white' do %>
-                  <i class="fa-solid fa-right-to-bracket"></i>
+                  <i class="fas fa-sign-in-alt"></i>
                   Log in
                 <% end %>
               </li>
@@ -84,15 +84,17 @@
 
     <main>
       <%= notice %>
-      <div class="pt-3 pb-4 px-4">
+      <div class="pt-3 px-4">
         <%= yield %>
       </div>
     </main>
 
-    <footer class="p-4">
-      <div class="container">
-        <div class="text-center">
-          <p>CopyRight Infratop.inc</p>
+    <footer>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </div>
         </div>
       </div>
     </footer>
